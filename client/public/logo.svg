@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" role="img" aria-label="OPINOVA">
+  <defs>
+    <mask id="cut">
+      <rect width="24" height="24" fill="#fff"/>
+      <polyline points="7.5,10.5 10.5,13.5 16.5,7.5" fill="none" stroke="#000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+    </mask>
+  </defs>
+  <!-- Bulle de discussion (opinion) avec une coche (vote) découpée -->
+  <path mask="url(#cut)" fill="#fff" d="M7 3H17A5 5 0 0 1 22 8V13A5 5 0 0 1 17 18H11L6 22V18H7A5 5 0 0 1 2 13V8A5 5 0 0 1 7 3Z"/>
+</svg>
