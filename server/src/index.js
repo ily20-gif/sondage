@@ -46,7 +46,7 @@ app.use('/api/admin', AdminRoutes);
 app.use('/api/ai', AiRoutes);
 
 if (process.env.NODE_ENV !== "development") {
-  const staticPath = path.join(__dirname, "../../client/dist");
+  const staticPath = path.join(__dirname, "../../frontend/dist");
   app.use(express.static(staticPath));
 
   app.get(/^\/(?!api).*/, (req, res) => {
