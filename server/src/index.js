@@ -46,7 +46,7 @@ app.use('/api/admin', AdminRoutes);
 app.use('/api/ai', AiRoutes);
 
 if (process.env.NODE_ENV !== "development") {
-  const staticPath = path.join(__dirname, "../frontend/dist");
+  const staticPath = path.join(__dirname, "../../client/dist");
   app.use(express.static(staticPath));
 
   app.get(/^\/(?!api).*/, (req, res) => {
@@ -54,7 +54,17 @@ if (process.env.NODE_ENV !== "development") {
   });
 }
 
-server.listen(PORT, "0.0.0.0", () => {
-  connectDB();
-  console.log(`Server running on port ${PORT}`);
-});
+const startServer = async () => {
+  try {
+    await connectDB();
+
+    server.listen(PORT, "0.0.0.0", () => {
+      console.log(`Server running on port ${PORT}`);
+    });
+  } catch (error) {
+    console.error("Failed to start server:", error);
+    process.exit(1);
+  }
+};
+
+startServer();
